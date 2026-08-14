@@ -39,7 +39,7 @@ function smartv_proto.dissector(buffer, pinfo, tree)
     pinfo.cols.protocol = "SmartTVTelemetry"
 
     local subtree = tree:add(smartv_proto, buffer(), "Telemetría Smart TV")
-    subtree:add_expert_info(PI_SECURITY, PI_WARN, "Datos de telemetría "  host)
+subtree:add_expert_info(PI_SECURITY, PI_WARN, "Datos de telemetría " .. host)
 
     local body_extracted = http_file_data()
     if body_extracted then
